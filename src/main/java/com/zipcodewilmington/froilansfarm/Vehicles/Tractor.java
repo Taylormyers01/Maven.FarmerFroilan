@@ -19,7 +19,6 @@ public class Tractor implements FarmVehicle<Farmer> {
     }
 
     public ArrayList<Edible> harvest(CropRow cropRow){
-
         return cropRow;
     }
 

@@ -20,9 +20,9 @@ import java.util.ArrayList;
 public class Farm {
     public ArrayList<Stables> stables = new ArrayList<>();
     ArrayList<ChickenCoop> chickenCoops= new ArrayList<>();
-    Field field = new Field();
+    public Field field = new Field();
     public FarmHouse farmHouse = new FarmHouse();
-    Aircraft aircraft;
+    public Aircraft aircraft;
     ArrayList<FarmVehicle> farmVehicles= new ArrayList<>();
 
     public void setup(){

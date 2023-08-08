@@ -5,7 +5,9 @@ import com.zipcodewilmington.froilansfarm.Animals.Pilot;
 import com.zipcodewilmington.froilansfarm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Food.Corn;
+import com.zipcodewilmington.froilansfarm.Food.CornStalk;
 import com.zipcodewilmington.froilansfarm.Food.Tomato;
+import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.FarmVehicle;
 import org.junit.Assert;
@@ -40,17 +42,12 @@ public class TractorTest {
     @Test
     public void testHarvest() {
         CropRow cropRow = new CropRow();
-        cropRow.add(new Corn());
-        cropRow.add(new Tomato());
+        cropRow.add(new CornStalk());
+        cropRow.add(new TomatoPlant());
 
-        ArrayList<Edible> expected = new ArrayList<>();
-        for (int i = 0; i < cropRow.size(); i++) {
-            expected.add((Edible)cropRow.get(i));
-        }
+        ArrayList<Edible> harvestCrops = tractor.harvest(cropRow);
 
-        ArrayList<Edible> actual = tractor.harvest(cropRow);
-
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(harvestCrops.size(), 2);
     }
 
     @Test
